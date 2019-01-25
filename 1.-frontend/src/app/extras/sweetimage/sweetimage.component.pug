@@ -1,0 +1,23 @@
+
+<!--component html goes here -->
+
+
+p {{height}}
+p {{width}}
+
+
+dropify(
+    [(ngModel)]="file",
+    [isBase64]="true",
+    (pasarArchivo)="nuevoArchivo($event)",
+        
+    
+)
+croppie(
+    [(ngModel)]="file",
+    [width]="width",
+    [height]="height",
+    [nuevoArchivo]="pasarImagen",
+    (eliminarrArchivo)="eliminarArchivo($event)"
+)
+img([src]="file")

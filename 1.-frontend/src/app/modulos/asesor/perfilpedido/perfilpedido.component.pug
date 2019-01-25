@@ -1,0 +1,65 @@
+
+.container
+    .content
+        .usuarioyproceso
+            .usuario
+                strong Usuario : 
+                span {{orden?.usuario?.nombre}}
+                span {{orden?.usuario?.correo}}
+                span {{orden?.usuario?.tipo}}
+            .proceso
+                .procesos
+                    mat-slider([disabled]="true", [max]="4", [min]="0",  [(ngModel)]="orden.status")
+                    span(*ngIf="orden?.status === 0") Pendiente de verificación
+                    span(*ngIf="orden?.status === 1") Pendiente de pago
+                    span(*ngIf="orden?.status === 2") En proceso de envio
+                    span(*ngIf="orden?.status === 3") Completado
+                button(mat-button, (click)="primero()") Se han verificado las existencias
+                button(mat-button, (click)="segundo()") Procesar el pago
+                button(mat-button, (click)="tercero()") Se han recibido todos los productos
+                button(mat-button, (click)="cuarto()") Se han entregado al cliente
+        .tarjetaydireccion
+            .tarjeta
+                .titulo
+                    strong Tarjeta :
+                    button(mat-button, (click)="cambiarTarjeta()")
+                        span  cambiar
+                        
+
+                span {{orden?.tarjeta?.numero}}
+            .direccion
+                .titulo
+                    strong Dirección : 
+                    button(mat-button, (click)="cambiarDireccion()")
+                        span  cambiar
+                        
+                span {{orden?.direccion?.calle}}, {{orden?.direccion?.ciudad}}
+        //- button(mat-button, (click)="imprimir()")
+        //-     mat-icon print
+        button(mat-stroked-button, (click)="agregar()", style="margin: 10px 0")
+            span Agregar nueva entrega
+            mat-icon add
+            
+        
+        mat-table.mat-elevation-z8(mat-table, [dataSource]="orden?.transacciones")
+            ng-container(matColumnDef="nombre")
+                mat-header-cell( *matHeaderCellDef) Nombre
+                mat-cell( *matCellDef="let transaccion")
+                    .imagen(*ngIf="transaccion?.version?.producto?.portadas?.length > 0")
+                        img([src]="transaccion?.version?.producto?.portadas[0].link") 
+                    span {{ transaccion?.version?.producto?.nombre }}
+            ng-container(matColumnDef="cantidad")
+                mat-header-cell( *matHeaderCellDef) Cantidad
+                mat-cell( *matCellDef="let transaccion")
+                    span {{transaccion.cantidad}}
+            ng-container(matColumnDef="accion")
+                mat-header-cell( *matHeaderCellDef) Accion
+                mat-cell( *matCellDef="let transaccion")
+                    mat-icon([style.color]="transaccion.status === 1 ? 'green ' : 'red'") lens
+                    mat-form-field(appearance="outline")
+                        mat-select([(value)]="transaccion.IdEntrega")
+                            mat-option(*ngFor="let entrega of orden.entregas",  [value]="entrega.id") {{ entrega.fecha | date:'shortDate'}}
+                    button((click)="guardarTransaccion(transaccion)", mat-button)
+                        mat-icon save
+            mat-header-row( *matHeaderRowDef="['nombre','cantidad',  'accion']")
+            mat-row(*matRowDef="let row; columns: ['nombre', 'cantidad', 'accion'];")

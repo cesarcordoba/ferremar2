@@ -1,0 +1,15 @@
+form
+    .line
+        mat-form-field
+            input(matInput, placeholder="Busca un nombre", [(ngModel)]="usuario.nombre",  name="nombre")
+        mat-form-field
+            input(matInput, placeholder="Busca un apellido", [(ngModel)]="usuario.apellido",  name="apellido")
+    .line                
+        mat-form-field
+            mat-label ¿Quieres cambiar tu contraseña?
+            input(matInput, placeholder="Busca un correo", [(ngModel)]="usuario.correo", disabled,  name="correo")
+        //- mat-form-field
+        //-     input(matInput, placeholder="Busca un status", [(ngModel)]="usuario.status",  name="status")
+        //- mat-form-field
+        //-     input(matInput, placeholder="Busca un tipo", [(ngModel)]="usuario.tipo",  name="tipo")
+button(mat-raised-button (click)="aceptar()") Aceptar

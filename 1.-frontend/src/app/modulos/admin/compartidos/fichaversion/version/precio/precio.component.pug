@@ -1,0 +1,6 @@
+
+mat-form-field
+	mat-chip-list(#chipList)
+		mat-chip(*ngFor="let precio of precios", [selectable]="selectable", [removable]="removable", (removed)="remove(fruit)")  $ {{precio.cantidad}}
+			mat-icon(matChipRemove)
+		input(placeholder="Nuevo precio", (matChipInputTokenEnd)="add($event)", [matChipInputFor]="chipList")

@@ -1,0 +1,37 @@
+
+.version-container
+    .version
+        form(class="example-form", [formGroup]='formulario')
+            mat-form-field
+                input(matInput, placeholder="Busca un nombre", formControlName='nombre', [(ngModel)]="version.nombre")
+            mat-slide-toggle([checked]="version.status === 1", (change)="cambio($event)")
+            //- mat-form-field
+            //-     input(matInput, placeholder="Busca un status", formControlName='status', [(ngModel)]="version.status")
+            button(mat-button, (click)="aceptar()") Aceptar
+        atributos([opciones]="opciones", [version]="version")
+        .preciosyexistencias
+            mat-accordion
+                mat-expansion-panel
+                    mat-expansion-panel-header
+                        mat-panel-title Precios y existencias por sucursal
+                        mat-panel-description
+                    mat-table(mat-table, [dataSource]="sucursales", class="mat-elevation-z8")
+                        ng-container(matColumnDef="nombre")
+                            mat-header-cell( *matHeaderCellDef) Nombre
+                            mat-cell( *matCellDef="let element")
+                                span {{ element.nombre }}
+                        ng-container(matColumnDef="versiones")
+                            mat-header-cell( *matHeaderCellDef) Precio
+                            mat-cell( *matCellDef="let element")
+                                precio([sucursal]="element")
+                                //- versiones([producto]="element")
+                        ng-container(matColumnDef="detalle")
+                            mat-header-cell( *matHeaderCellDef) Existencia
+                            mat-cell( *matCellDef="let element")
+                                existencia([sucursal]="element")
+                                //- button(mat-button (click)="abrir(element)")
+                                //-     mat-icon info
+                                //- button(mat-button (click)="ir(element)")
+                                //-     mat-icon edit
+                        mat-header-row( *matHeaderRowDef="['nombre', 'versiones', 'detalle']")
+                        mat-row(*matRowDef="let row; columns: ['nombre', 'versiones', 'detalle'];")
