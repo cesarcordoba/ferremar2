@@ -1,5 +1,5 @@
 
-import { Component, OnInit,  Injectable,  Inject, PLATFORM_ID   } from '@angular/core';
+import { Component, OnInit,  Injectable,  Inject, PLATFORM_ID, ViewEncapsulation   } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { isPlatformBrowser } from '@angular/common';
 import { ListadecomprasComponent } from './listadecompras/listadecompras.component'
@@ -15,7 +15,8 @@ declare var $: any;
   templateUrl: './bolsa.component.pug',
   styleUrls: [
       './bolsa.component.styl'
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BolsaComponent implements OnInit {
 

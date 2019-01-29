@@ -43,6 +43,10 @@ import { PerfilespacioModule } from './perfilespacio/perfilespacio.module';
 
 import { AvisoModule } from './aviso/aviso.module';
 
+import { BarramenuhomeModule } from './barramenuhome/barramenuhome.module';
+
+import { BuscadormainModule } from './buscadormain/buscadormain.module';
+
 @NgModule({
 	imports: [
 		CommonModule,
@@ -63,6 +67,8 @@ import { AvisoModule } from './aviso/aviso.module';
         BolsaModule,
         PerfilespacioModule,
         AvisoModule,
+        BarramenuhomeModule,
+        BuscadormainModule,
 	],
 	declarations: [
 		LegalesComponent,

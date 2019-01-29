@@ -1,19 +1,20 @@
 main
     header
         mat-toolbar
-            button.logo(mat-button (click)="ir('')")
-                .logo-content
-                    img(src="assets/images/No_Foto.png")
-                    h1 El gigante de los azulejos
-            .links
-                div(*ngFor="let link of navLinks" )
-                    button(mat-button, [routerLink]="link.path" ) {{link.label}}
-                
-                bolsa
-                div(*ngIf="usuario === null")
+            .logo-content((click)="ir('')")
+                img(src="assets/images/ferremar_logo.png")
+            .buscadormain
+                buscadormain
+                //- div(*ngFor="let link of navLinks" )
+                //-     button(mat-button, [routerLink]="link.path" ) {{link.label}}
+            .inicioSesion
+                .sinUsuario(*ngIf="usuario === null")
                     button(mat-button, (click)="login()") 
-                        mat-icon account_circle
-                div(*ngIf="usuario !== null")
+                        img(src="assets/images/ferremar_usuario.png")
+                    .texto
+                        p Iniciar sesión o registrarse
+                .linea-vertical
+                .conUsuario(*ngIf="usuario !== null")
                     button.avatarbutton(mat-button, [mat-menu-trigger-for]="menuUser")
                         .avatar-content
                             .avatar(*ngIf="usuario?.avatares?.length > 0", [ngStyle]="{ 'background-image' :' url(' +  usuario?.avatares[0]?.link +  ')' }")
@@ -25,12 +26,12 @@ main
                         span {{ usuario?.nombre }}
                     a(mat-menu-item, (click)="salir()")
                         mat-icon exit_to_app
-                        span Cerrar Sesión  
-        menu
-        
+                        span Cerrar Sesión
+                bolsa 
+        //-menu
+        barramenuhome
         //- include ./partials/header.pug
-    //- .contenido([@routerTransition]="getState(o)")
-        
+    //- .contenido([@routerTransition]="getState(o)")   
     .contenido
         //- router-outlet(#o="outlet")
         router-outlet

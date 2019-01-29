@@ -1,0 +1,19 @@
+
+mat-card.componente([ngStyle]="borde")
+    mat-toolbar
+        mat-toolbar-row(style="justify-content : space-between")
+            .titulo
+                h3 slidercategorias
+                strong slider
+            .detalles
+                p Página actual : {{ currentSlide }}
+                span Numero de elementos : {{ categorias.items.length }}
+    .slider(*ngIf="categorias")
+        ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
+            .slide(ngxSlickItem,  *ngFor="let categoria of categorias.items ; index as i ")
+                mat-card
+                    p {{ i }}
+                    p {{  categoria.nombre }}
+
+
+// mat-paginator([length]="categorias.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

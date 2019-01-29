@@ -27,7 +27,8 @@ div(class="contenedor", [class.isMobile]="mobileQuery.matches")
                     a(mat-menu-item, (click)="salir()")
                         mat-icon exit_to_app
                         span Cerrar Sesión
-        menu
+        //-menu
+        barramenuhome
     mat-sidenav-container(class="sidenav-container", [style.marginTop.px]="mobileQuery.matches ? 65 : 0")
         mat-sidenav(#snav, [mode]="mobileQuery.matches ? 'over' : 'side'", [fixedInViewport]="mobileQuery.matches", fixedTopGap="65", [opened]="mobileQuery.matches? false : true")
             mat-nav-list

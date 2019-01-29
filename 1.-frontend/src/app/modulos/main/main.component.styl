@@ -1,56 +1,89 @@
-
-
 @import  '../../../defaults.styl'
 
-
 header
-    height 90px !important
+    height 150px !important
     mat-toolbar
-        height 50px
-        background-color azul1
+        height 115px !important
+        background white !important
         display flex
         justify-content space-around
         padding 0 10vw
-        .logo
-            display flex
-            justify-content center
-            align-items center
-            .logo-content
-                display flex
-                img
-                    height 36px
-                    width auto
-                    margin 0 5px
-                h1
-                    color white
-                    line-height 40px
-                    font-family Poopins
-                    @media mobile
-                        font-size 13px
-        .links
-            display flex
-            height 40px
-            button
-                height 40px
-            .avatarbutton
-                .avatar-content
-                    display flex
-                    .avatar
-                        border-radius 40px
-                        overflow hidden
-                        height 36px
-                        width 36px
-                        background-position center
-                        background-size cover
-                        margin-right 5px
-    menu, section
-        margin 0px
-        padding 0px
-        width 100%
-        height 40px
-        background-color rojo1
-    button
-        color white
+		.logo-content
+			display flex
+			justify-content center
+			align-items center
+			width 80px
+			height 80px
+			&:hover
+				cursor pointer
+			&:focus
+				outline 0px
+			img
+				width 80px
+				height 80px
+		.inicioSesion
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			button
+				height 40px
+			.sinUsuario
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				.texto
+					width 100%
+					height 40px
+					p
+						font-size 12px
+						text-align justify
+						margin 0px
+			.linea-vertical
+				height 40px
+				width 1px
+				background-color gray
+				margin-left 10px
+				margin-right 10px
+			.avatarbutton
+					.avatar-content
+					display flex
+						.avatar
+							border-radius 40px
+							overflow hidden
+							height 36px
+							width 36px
+							background-position center
+							background-size cover
+							margin-right 5px
+        // .inicioSesion
+        //     display flex
+		// 	flex-direction row
+		// 	justify-content center
+		// 	align-items center
+        //     height 40px
+        //     button
+        //         height 40px
+        //     .avatarbutton
+        //         .avatar-content
+        //             display flex
+        //             .avatar
+        //                 border-radius 40px
+        //                 overflow hidden
+        //                 height 36px
+        //                 width 36px
+        //                 background-position center
+        //                 background-size cover
+        //                 margin-right 5px
+    // menu, section
+    //     margin 0px
+    //     padding 0px
+    //     width 100%
+    //     height 40px
+    //     background-color rojo1
+    // button
+    //     color white
 
 
 

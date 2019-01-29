@@ -20,6 +20,7 @@ import { VersionComponent } from './producto/version/version.component';
 import { ImagenesComponent } from './producto/imagenes/imagenes.component';
 import { AmbientesComponent } from './ambientes/ambientes.component';
 import { AmbienteComponent } from './ambientes/ambiente/ambiente.component';
+import { TablainfoproductoComponent } from './tablainfoproducto/tablainfoproducto.component';
 import { FichaproductoModule } from './../compartidos/fichaproducto/fichaproducto.module';
 
 
@@ -44,6 +45,7 @@ import { FichaproductoModule } from './../compartidos/fichaproducto/fichaproduct
         ImagenesComponent,
         AmbientesComponent,
         AmbienteComponent,
+        TablainfoproductoComponent,
     ],
     entryComponents : [
     ],
