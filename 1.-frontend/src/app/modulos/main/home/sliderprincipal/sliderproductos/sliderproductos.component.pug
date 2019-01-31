@@ -1,19 +1,8 @@
-
-mat-card.componente([ngStyle]="borde")
-    mat-toolbar
-        mat-toolbar-row(style="justify-content : space-between")
-            .titulo
-                h3 sliderproductos
-                strong slider
-            .detalles
-                p Página actual : {{ currentSlide }}
-                span Numero de elementos : {{ productos.items.length }}
+.slider-principal
     .slider(*ngIf="productos")
         ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
             .slide(ngxSlickItem,  *ngFor="let producto of productos.items ; index as i ")
-                mat-card
-                    p {{ i }}
-                    p {{  producto.nombre }}
-
-
-// mat-paginator([length]="productos.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")
+                p {{  producto.nombre }}
+                .btns-movilidad
+                    button.comprar(mat-button) Comprar
+                    button.detalles(mat-button) Ver detalles

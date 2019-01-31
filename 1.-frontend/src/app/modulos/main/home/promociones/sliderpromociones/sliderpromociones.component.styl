@@ -1,44 +1,58 @@
 
 @import  '../../../../../../defaults.styl'
 
-.boxshadow
-	box-shadow 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)
-
-.detalles
-	p
-		margin 0px
-
-.slider
-	height 300px
-	display flex
-	align-items center
-ngx-slick
-	width 100%
-.slick-slider
-	.slick-arrow
-		height 100px !important
-		width 50px !important
-		z-index 1
-		background-color white !important
-		@extends .boxshadow
-		&:hover
-			background-color azul
-			color white
-		&:before
-			color azul
-		&.slick-prev
-			left 25px
-			@media mobile
-				left -25px
-			&:before
-				font-family "Material Icons"
-				content "keyboard_arrow_left"
-				color black
-		&.slick-next
-			right 25px
-			@media mobile
-				right -25px
-			&:before
-				font-family "Material Icons"
-				content "keyboard_arrow_right"
-				color black
+.slider-promociones
+	.slider
+		height 400px !important
+		display flex
+		align-items center
+		.slick-dotted.slick-slider
+			margin-bottom inherit !important
+		.carousel
+			height 400px
+			.slick-list
+				height 400px
+				.slick-track
+					height 400px
+					.slide
+						width 500px
+						display flex
+						justify-content center
+						align-items center
+						&:focus
+							outline 0px
+						.promo-content
+							width 610px
+							.imagen-promo
+								background-color gray
+								height 25%
+							.informacion-promo
+								display flex
+								flex-direction row
+								justify-content space-between
+								align-items center
+								.descripcion
+									height 80px
+									width 1445px
+									display flex
+									justify-content center
+									align-items center
+									border 0.5px solid gray
+									margin-top 2vh
+									margin-right 5px
+									.texto
+										width 75%
+										margin-right 60px
+										p
+											font-size 12px
+											text-align justify
+								.cuadrado
+									background-color naranja
+									width 310px
+									height 80px
+									margin-top 2vh
+									margin-left 5px
+			.slick-next
+				display none
+			.slick-prev
+				display none

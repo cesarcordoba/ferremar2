@@ -1,10 +1,11 @@
-
-section
-    .container
-        .content
-            mat-card.componente([ngStyle]="borde")
-                mat-toolbar
-                    mat-toolbar-row(style="justify-content : space-between")
-                        .titulo
-                            h3 barramenuhome
-                            strong Vista
+.barra-container
+    .barra-content
+        button.btn-menu(mat-button, (click)="abrir($event)") MARCAS
+        button.btn-menu(mat-button, (click)="abrir($event)") HERRAMIENTAS
+        button.btn-menu(mat-button, (click)="abrir($event)") CONSTRUCCION
+        button.btn-menu(mat-button, (click)="abrir($event)") HOGAR
+        button.btn-menu(mat-button, (click)="abrir($event)") FERRETERIA
+.barra-negrita-container 
+    .barra-negrita-content
+        button.btn-negrita(mat-button)
+            img(src="assets/images/ferremar_home.png")

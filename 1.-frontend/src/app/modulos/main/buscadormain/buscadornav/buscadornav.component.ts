@@ -11,7 +11,8 @@ import { ProductoService } from '../../../../servicios';
 @Component({
   selector: 'buscadornav',
   templateUrl: './buscadornav.component.pug',
-  styleUrls: ['./buscadornav.component.styl']
+  styleUrls: ['./buscadornav.component.styl'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BuscadornavComponent implements OnInit {
 
