@@ -1,12 +1,19 @@
-form(class="example-form")
-        //- mat-form-field
-        //-     input(matInput, placeholder="Busca un IdTwitter",  [(ngModel)]="llave.IdTwitter",  name="IdTwitter")
-        //- mat-form-field
-        //-     input(matInput, placeholder="Busca un IdFacebook", [(ngModel)]="llave.IdFacebook",   name="IdFacebook")
-        //- mat-form-field
-        //-     input(matInput, placeholder="Busca un IdGoogle", [(ngModel)]="llave.IdGoogle",   name="IdGoogle")
-        //- mat-form-field
-        //-     input(matInput, placeholder="Busca un IdInstagram", [(ngModel)]="llave.IdInstagram",  name="IdInstagram")
-        mat-form-field
-            input(matInput, placeholder="Busca un password", [(ngModel)]="llave.password",   name="password")
-button(mat-raised-button (click)="aceptar()") Aceptar
+.formulario-llave-container
+    .formulario-llave-content
+        .barra-editar-usuario-llave
+            .titulo
+                h3 Actualizar password
+            .btn-editar-container(*ngIf="editar===true")
+                button.btn-editar(mat-button, (click)="editarusuariollave()") Editar
+                    mat-icon edit
+            .btn-cancelar-container(*ngIf="editar===false")
+                button.btn-cancelar(mat-button, (click)="editarusuariollave()") Cancelar
+                    mat-icon clear
+        .div-formulario-llave
+            form(class="example-form")
+                mat-form-field
+                    input(matInput, placeholder="Constraseña actual", [(ngModel)]="llave.password",   name="password", [disabled]="valid", [type]="validpass")
+                button.btn-vercontra(mat-button, *ngIf="editar===false", (click)="cambiarpass()")
+                    mat-icon remove_red_eye
+            .barra-boton-guardar(*ngIf="editar===false")
+                button.btn-formulario-llave(mat-raised-button (click)="aceptar()") Guardar

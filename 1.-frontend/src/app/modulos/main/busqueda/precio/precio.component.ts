@@ -1,10 +1,11 @@
 
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'precio',
   templateUrl: './precio.component.pug',
-  styleUrls: ['./precio.component.styl']
+  styleUrls: ['./precio.component.styl'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PrecioComponent implements OnInit {
 

@@ -5,5 +5,5 @@
         mat-autocomplete(#auto="matAutocomplete")
             //- mat-select([(ngModel)]="item" placeholder="Favorite food" )
             mat-option(*ngFor="let item of categorias | async", [value]="item") {{item}}
-    button(mat-button, mat-stroked-button, (click)="eliminacion()")
+    button.btn-eliminar-categoria(mat-button, mat-stroked-button, (click)="eliminacion()")
         mat-icon clear

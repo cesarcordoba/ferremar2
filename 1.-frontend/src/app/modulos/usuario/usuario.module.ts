@@ -23,6 +23,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 
 import { MenuModule } from '../main/menu/menu.module';
 import { BolsaModule } from '../main/bolsa/bolsa.module';
+import { BarramenuhomeModule } from '../main/barramenuhome/barramenuhome.module';
 
 
 import { ProductosModule } from '../admin/productos/productos.module';
@@ -55,6 +56,7 @@ import { PerfilpedidoModule } from './perfilpedido/perfilpedido.module';
 		MaterialModule,
 		MenuModule,
 		BolsaModule,
+		BarramenuhomeModule,
         HomeModule,
         MetodosModule,
         DireccionesModule,

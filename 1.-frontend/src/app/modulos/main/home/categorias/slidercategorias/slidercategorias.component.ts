@@ -24,11 +24,11 @@ export class SlidercategoriasComponent implements OnInit {
     filtro : any;
 
     constructor() {
-        this.slideConfig = { "slidesToShow": 5, "slidesToScroll": 4 , "arrows" : true, 'dots' : true }
+        this.slideConfig = { "slidesToShow": 4, "slidesToScroll": 4 , "arrows" : true }
         this.currentSlide = 0
         this.filtro = {
                 pagina : 1,
-                limite :  (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ?  20 :  3,
+                limite :  (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ?  19 :  3,
                 order : ['id'],
                 where : {},
                 include : []

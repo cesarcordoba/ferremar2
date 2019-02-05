@@ -1,10 +1,11 @@
 
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'modulo',
   templateUrl: './modulo.component.pug',
-  styleUrls: ['./modulo.component.styl']
+  styleUrls: ['./modulo.component.styl'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ModuloComponent implements OnInit {
 

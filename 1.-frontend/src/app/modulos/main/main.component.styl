@@ -33,13 +33,21 @@ header
 				flex-direction row
 				justify-content center
 				align-items center
-				.texto
-					width 100%
+				.btn-login-main
+					min-width inherit 
+					width 57px
+					display flex
+					justify-content center
+					align-items center
+				.texto-container
 					height 40px
-					p
-						font-size 12px
-						text-align justify
-						margin 0px
+					.texto1, .texto2
+						width 100%
+						p
+							font-size 10px
+							text-align justify
+							margin 0
+							height 10px
 			.linea-vertical
 				height 40px
 				width 1px
@@ -88,93 +96,63 @@ header
 
 
 footer
-	display flex
-	flex-direction column
-	.marcas
-		height 90px
-		background-color white
+	background-color negro
+	.contenedor-abajo
 		display flex
-		justify-content center
-		@media chica
-			height 110px
-		@media mobile
-			height 200px
-		.marcas-content
-			width 90%
-			display grid
-			flex-direccion row
-			justify-content space-between
-			align-items center
-			grid-template-columns: repeat(12, 1fr)
-			@media chica
-				grid-template-columns: repeat(6, 1fr)
-			@media tablet
-				grid-template-columns: repeat(6, 1fr)
-			@media mobile
-				grid-template-columns: repeat(3, 1fr)
-			.marca
-				display flex
-				justify-content center
-				.image-container
-					width inherit
-					img
-						max-width 90px
-						max-height 45px
-						height auto
-						filter grayscale(100%)
-						opacity .8
-	.siguenos
-		height 80px
-		background-color azul2
-		display flex
-		flex-direccion flex-end
-        background-color inherit
-		button
-			height 80px
-			width 80px
-			margin 0px
-			border-left 1px solid rgba(255, 255, 255, .1)
+		flex-direction  row
+		justify-content space-between
+		align-items center
+		.copyrigth
 			display flex
-			md-icon
-				height 40px
-				width 40px
-				svg
-					color white
-	.copyrigth
-		height 70px
-		background-color white
-		display flex
-		justify-content center
-		width 100%
-		.copy-content
-			width 90%
+			flex-direction column
+			margin-left 30px
+			p
+				color white
+				font-size 11px
+				margin 5px
+			.aviso
+				display flex
+				flex-direction row
+				justify-content flex-start
+				.btn-privacidad, .btn-condiciones
+					height 16px
+					display flex
+					justify-content center
+					align-items center
+					line-height inherit !important
+					span
+						font-size 8px
+						color white
+						text-transform capitalize
+				.linea-abajo
+					margin-top 1px
+					height 8px
+					border 0.5px solid white
+		.contactos
 			display flex
 			flex-direction row
 			justify-content space-between
-			.copy
-				padding 10px
-				.mensaje
-					p
-						font-size 11px
-						margin 5px
-				.botones
-					display flex
-					@media mobile
-						flex-direction column
-					button
-						background-color azul4
-						color white
-						min-width inherit
-						min-height inherit
-						margin 0px 5px
-						padding 3px
-						font-size 11px
-						line-height 11px
-			.starbrand
-				button
-					height 70px
+			align-items center
+			width 25%
+			margin-right 10vw
+			.correo, .telefono
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				p
 					margin 0px
-					border-radius 0px
-					mat-icon
-						width 150px
-						height auto
+					color white
+					font-size 10px
+					font-weight bolder
+		.imagen
+			background-color white
+			width 10%
+			display flex
+			justify-content center
+			align-items center
+			.logo-abajo
+				height 70px
+				img
+					width 79%
+					height 96%

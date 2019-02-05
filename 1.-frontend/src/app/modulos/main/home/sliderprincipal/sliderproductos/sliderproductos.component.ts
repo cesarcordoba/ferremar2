@@ -1,7 +1,8 @@
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import * as _ from 'lodash'
 import { ProductoService } from '../../../../../servicios';
+import { Router } from '@angular/router';
 @Component({
     selector: 'sliderproductos',
     templateUrl: './sliderproductos.component.pug',
@@ -23,7 +24,7 @@ export class SliderproductosComponent implements OnInit {
     }
     filtro : any;
 
-    constructor() {
+    constructor(public route : Router) {
         this.slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 , "dots": true}
         this.currentSlide = 0
         this.filtro = {
@@ -43,6 +44,10 @@ export class SliderproductosComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  ir(producto){
+    this.route.navigate(['producto/' + producto.id ], { queryParams: { nombre: _.snakeCase(producto.nombre) } } )
+}
 
   afterChange = (event) => this.currentSlide = event.currentSlide
 }

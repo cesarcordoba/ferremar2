@@ -24,12 +24,15 @@ form([formGroup]='formulario', *ngIf="edicion === true")
 mat-chip-list(*ngIf="edicion === true")
 	mat-chip(*ngFor="let chip of configuracion.escalas") {{ chip.width }} - {{ chip.height }}
 .inputs(*ngIf="edicion === true")
-	dropify(
+	//-dropify(
 		[(ngModel)]="file",
 		[isBase64]="true",
 		[withCroppie]="true",
 		[croppieWith]="configuracion.escalas[0].width",
 		[croppieHeight]="configuracion.escalas[0].height")
+	dropify(
+		[(ngModel)]="file",
+		[isBase64]="true",)
 	button(mat-icon-button, (click)="guardar()", *ngIf="carga==false")
 		mat-icon save
 	mat-spinner(*ngIf="carga==true")

@@ -1,11 +1,12 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { ProductoService } from '../../../../../servicios';
 @Component({
   selector: 'gridproductos',
   templateUrl: './gridproductos.component.pug',
-  styleUrls: ['./gridproductos.component.styl']
+  styleUrls: ['./gridproductos.component.styl'],
+  encapsulation: ViewEncapsulation.None
 })
 export class GridproductosComponent implements OnInit {
 
@@ -17,7 +18,7 @@ export class GridproductosComponent implements OnInit {
         items : []
     }
     filtro : any;
-    columnas = 4
+    columnas = 2
     height = '200px'
     colspan = 1
     rowspan = 1
@@ -25,7 +26,7 @@ export class GridproductosComponent implements OnInit {
     constructor() {
         this.filtro = {
                 pagina : 1,
-                limite :  (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ?  5 :  3,
+                limite :  (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ?  4 :  2,
                 order : ['id'],
                 where : {},
                 include : []

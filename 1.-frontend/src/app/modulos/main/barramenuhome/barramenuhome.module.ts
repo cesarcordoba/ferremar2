@@ -9,7 +9,8 @@ import { RangeSliderModule } from 'ngx-range-slider'
 
 import { BarramenuhomeComponent } from './barramenuhome.component';
 
-
+import { CategoriasComponent } from './categorias/categorias.component';
+import { CategoriaComponent } from './categorias/categoria/categoria.component';
 
 
 @NgModule({
@@ -20,9 +21,14 @@ import { BarramenuhomeComponent } from './barramenuhome.component';
         RangeSliderModule,
         FormsModule,
         ReactiveFormsModule,
-],
+    ],
+    entryComponents : [
+        CategoriasComponent
+    ],
     declarations: [
         BarramenuhomeComponent,
+        CategoriasComponent,
+        CategoriaComponent
     ],
     exports: [
         BarramenuhomeComponent
