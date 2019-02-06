@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {  BehaviorSubject, Observable  } from 'rxjs'
 
 @Component({
@@ -9,26 +9,49 @@ import {  BehaviorSubject, Observable  } from 'rxjs'
 })
 export class SweetimageComponent {
 
-    file: File | string
+    file : boolean = false
 
     @Input() width = 400;
     @Input() height = 400;
+    @Output() base64 = new EventEmitter();
 
-    pasarImagen : BehaviorSubject<any>
+    controlImagen : BehaviorSubject<any>
 
     constructor(){
 
-        this.pasarImagen = new BehaviorSubject(null);
-
+        this.controlImagen = new BehaviorSubject(null);
 
     }
 
     nuevoArchivo(ev){
-        this.pasarImagen.next(ev)
+
+
+        this.controlImagen.next(ev)
+
+        this.file = true
+
+        // this.file: File = ev.files[0];
+
     }
 
+    
+
     eliminarArchivo(ev){
-        this.pasarImagen.next(null)
+
+        
+
+        this.file = false
+        // this.base64.emit(undefined);
+        this.controlImagen.next(null)
+
+    }
+
+    imprimir(){
+
+    }
+
+    enlazar(event){
+        this.base64.emit(event)
     }
 
 }

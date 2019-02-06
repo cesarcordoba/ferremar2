@@ -3,6 +3,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { element } from 'protractor';
 declare var $: any
 declare var Croppie: any;
+
+import * as _ from 'lodash'
+
 @Component({
     selector: 'dropify',
     templateUrl: './dropify.component.pug',
@@ -31,6 +34,8 @@ export class DropifyComponent implements ControlValueAccessor, OnInit, AfterView
 
     @Output() pasarArchivo = new EventEmitter();
 
+    @Input() quitarArchivo
+
     base64textString
     selectedFileName: string = null;
     dropify: any;
@@ -40,7 +45,11 @@ export class DropifyComponent implements ControlValueAccessor, OnInit, AfterView
     verDropyCoppi : boolean = true;
 
     constructor(){
+
+
         this.verDropyCoppi = true
+
+
     }
 
     writeValue(value: any) {
@@ -122,7 +131,20 @@ export class DropifyComponent implements ControlValueAccessor, OnInit, AfterView
         // if (this.withCroppie == true ) {
         //     this.initCroppie();
         // }
-    }
+        if(this.quitarArchivo) {
+            this.quitarArchivo.subscribe(response => {
+
+                if(_.isNull(response)){
+    
+                    this.dropify.resetPreview();
+                    this.dropify.clearElement();
+    
+                }
+    
+            })
+        }
+
+    } 
 
     initCroppie(){
 
@@ -162,7 +184,7 @@ export class DropifyComponent implements ControlValueAccessor, OnInit, AfterView
             }
         }).on('change', function() {
 
-            console.log(this.files)
+
 
 
 
@@ -181,7 +203,7 @@ export class DropifyComponent implements ControlValueAccessor, OnInit, AfterView
         })
 
         dropify.on('dropify.beforeClear', (event, element) => {
-
+            // this.propagateChange(null);
             this.remove.emit('assets/images/nophoto.svg')
         });
 

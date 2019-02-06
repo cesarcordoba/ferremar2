@@ -1,7 +1,6 @@
-
-import { Component, OnInit, Input} from '@angular/core';
+import { ConfirmDelDialogComponent } from '../../../../extras/confirm-del-dialog/confirm-del-dialog.component';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar, MatDialog } from '@angular/material';
-import { ConfirmDelDialogComponent } from '../../fragments/confirm-del-dialog/confirm-del-dialog.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import * as _ from 'lodash'
 import * as jimp from 'jimp'
@@ -114,6 +113,7 @@ export class ImagenportadaComponent implements OnInit {
 		}
 	}
 	guardar() {
+		console.log("si estas aqii")
         let folio = _.random(0, 100000)
 		this.configuracion.escalas.forEach((escala, index )=> {
 			this.subir(index, folio, escala.width, escala.height );
@@ -126,7 +126,7 @@ export class ImagenportadaComponent implements OnInit {
 				.then(image => {
 					height ? null : height = width / 2;
 					image.resize(width, height).quality(100).getBuffer(jimp.MIME_PNG, (err, value) => {
-						this._aws.subirArchivo(value, 'bull-imagenes', 'tryadd-portadas/', ('portadas-id-' + this.id + width + '-' + height + '.png')).subscribe(archivo => {
+						this._aws.subirArchivo(value, 'bull-imagenes', 'ferrenar-portadas/', ('portadas-id-' + this.id + width + '-' + height + '.png')).subscribe(archivo => {
 							if (archivo == true) {
 								this.carga = true;
 							} else {

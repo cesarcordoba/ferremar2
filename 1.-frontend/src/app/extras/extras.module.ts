@@ -1,3 +1,4 @@
+import { ConfirmDelDialogComponent } from './confirm-del-dialog/confirm-del-dialog.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,7 +19,6 @@ import { SlickModule } from 'ngx-slick';
 
 
 import { NotificacionComponent } from './notificacion/notificacion.component';
-
 
 
 @NgModule({
@@ -42,6 +42,7 @@ import { NotificacionComponent } from './notificacion/notificacion.component';
 		// PreviewImageComponent,
 		// MultimediaComponent,
 		NotificacionComponent,
+		ConfirmDelDialogComponent
 
 
 	],
@@ -56,12 +57,14 @@ import { NotificacionComponent } from './notificacion/notificacion.component';
 		// PreviewImageComponent,
 		// MultimediaComponent,
 		NotificacionComponent,
+		ConfirmDelDialogComponent
 
 	],
 	providers: [
 	],
 	entryComponents: [
-		NotificacionComponent
+		NotificacionComponent,
+		ConfirmDelDialogComponent
 		// PreviewImageComponent
 	]
 })
