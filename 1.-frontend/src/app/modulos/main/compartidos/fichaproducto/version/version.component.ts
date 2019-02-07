@@ -65,6 +65,8 @@ export class VersionComponent implements OnInit, AfterViewInit {
     }
 
     agregar(){
+        console.log(this.version)
+        console.log("funcion agregar agregar en version.component")
         this.bolsabridge.agregar(this.version)
     }
 }

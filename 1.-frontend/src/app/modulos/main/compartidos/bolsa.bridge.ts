@@ -54,6 +54,8 @@ export class BolsaBridge implements OnInit {
     }
 
     agregar(x){
+        console.log("funcion agregar en la bolsa.bride")
+        console.log(x)
         this.snackBar.open('Agregaste ' + x.nombre + ' a tu bolsa', 'Listo', {
             duration: 5000,
             verticalPosition: 'top',
